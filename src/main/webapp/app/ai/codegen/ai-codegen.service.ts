@@ -12,10 +12,10 @@ export class AiCodegenService {
   constructor(private http: HttpClient) {}
 
   generate(prompt: string): Observable<GeneratedCode> {
-    return this.http.post<GeneratedCode>('/api/ai/codegen', { prompt });
+    return this.http.post<GeneratedCode>('http://localhost:8080/api/ai/codegen', { prompt });
   }
 
   save(component: any) {
-    return this.http.post('/api/generated-components', component);
+    return this.http.post('http://localhost:8080/api/generated-components', component);
   }
 }
